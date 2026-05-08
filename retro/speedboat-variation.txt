@@ -1,0 +1,9 @@
+Même structure que le speedboat mais avec un thème adapté à <THEME>. Voici comment adapter les différents éléments : 
+Style global : <STYLE> 
+Carte globale : <DECOR> 
+Objectif -> <OBJECTIF> 
+Equipe -> <EQUIPE> 
+Risques -> <RISQUEQ> 
+Ralentissements -> <RALENTISSEMENTS> 
+Ce qui nous aide : <AIDES> 
+Ce qui nous rend heureux : <REUSSITES>
