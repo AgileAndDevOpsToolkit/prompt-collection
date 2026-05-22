@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thémification Speed Boat</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #d8dee9;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #15803d;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    header {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 10px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.9fr) minmax(360px, 1.1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+    }
+
+    .params-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .params-table tr {
+      border-top: 1px solid var(--border);
+    }
+
+    .params-table tr:first-child {
+      border-top: none;
+    }
+
+    .params-table th,
+    .params-table td {
+      padding: 12px 0;
+      vertical-align: top;
+    }
+
+    .params-table th {
+      width: 34%;
+      padding-right: 14px;
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #ffffff;
+      color: var(--text);
+      font: inherit;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input {
+      min-height: 42px;
+      padding: 9px 11px;
+    }
+
+    textarea {
+      min-height: 455px;
+      padding: 16px;
+      resize: vertical;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    .copy-button {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.22);
+    }
+
+    .copy-button:hover {
+      background: var(--primary-hover);
+    }
+
+    .reset-button {
+      background: #eef2ff;
+      color: #1e3a8a;
+    }
+
+    .reset-button:hover {
+      background: #dbeafe;
+    }
+
+    .status {
+      color: var(--success);
+      font-size: 0.95rem;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .status.visible {
+      opacity: 1;
+    }
+
+    .hint {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      textarea {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 22px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+
+      .params-table,
+      .params-table tbody,
+      .params-table tr,
+      .params-table th,
+      .params-table td {
+        display: block;
+        width: 100%;
+      }
+
+      .params-table th {
+        padding: 12px 0 6px;
+      }
+
+      .params-table td {
+        padding: 0 0 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Thémification Speed Boat</h1>
+      <p class="subtitle">
+        Renseigne les paramètres du template : le prompt se met à jour automatiquement et reste éditable avant copie.
+      </p>
+    </header>
+
+    <section class="layout" aria-label="Générateur de prompt Speed Boat">
+      <div class="card">
+        <h2>Paramètres</h2>
+        <table class="params-table">
+          <tbody>
+            <tr>
+              <th scope="row"><label for="theme">THEME</label></th>
+              <td><input id="theme" type="text" placeholder="Ex. Halloween" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="style">STYLE</label></th>
+              <td><input id="style" type="text" placeholder="cartoon/dessin animé" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="decor">DECOR</label></th>
+              <td><input id="decor" type="text" placeholder="Ex. un village hanté sous la pleine lune" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="objectif">OBJECTIF</label></th>
+              <td><input id="objectif" type="text" placeholder="Ex. un château éclairé au loin" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="equipe">EQUIPE</label></th>
+              <td><input id="equipe" type="text" placeholder="Ex. une équipe déguisée en monstres sympathiques" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="risques">RISQUES</label></th>
+              <td><input id="risques" type="text" placeholder="Ex. des fantômes ou des chauves-souris" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="ralentissements">RALENTISSEMENTS</label></th>
+              <td><input id="ralentissements" type="text" placeholder="Ex. des toiles d’araignée sur le chemin" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="aide">AIDE</label></th>
+              <td><input id="aide" type="text" placeholder="Ex. des lanternes, potions ou bonbons magiques" autocomplete="off" /></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="heureux">HEUREUX</label></th>
+              <td><input id="heureux" type="text" placeholder="Ex. un panier rempli de bonbons déjà récoltés" autocomplete="off" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2>Prompt généré</h2>
+        <textarea id="promptOutput" aria-label="Prompt généré"></textarea>
+        <div class="actions">
+          <button class="copy-button" id="copyButton" type="button">Copier / coller</button>
+          <button class="reset-button" id="resetButton" type="button">Réinitialiser</button>
+          <span class="status" id="copyStatus" role="status" aria-live="polite">Prompt copié !</span>
+        </div>
+        <p class="hint">
+          Tu peux modifier directement le prompt dans cette zone. Une nouvelle saisie dans les paramètres le régénère automatiquement.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const fields = {
+      theme: document.getElementById('theme'),
+      style: document.getElementById('style'),
+      decor: document.getElementById('decor'),
+      objectif: document.getElementById('objectif'),
+      equipe: document.getElementById('equipe'),
+      risques: document.getElementById('risques'),
+      ralentissements: document.getElementById('ralentissements'),
+      aide: document.getElementById('aide'),
+      heureux: document.getElementById('heureux')
+    };
+
+    const promptOutput = document.getElementById('promptOutput');
+    const copyButton = document.getElementById('copyButton');
+    const resetButton = document.getElementById('resetButton');
+    const copyStatus = document.getElementById('copyStatus');
+
+    const defaults = {
+      theme: '<THEME>',
+      style: 'cartoon/dessin animé',
+      decor: '<DECOR>',
+      objectif: '<OBJECTIF>',
+      equipe: '<EQUIPE>',
+      risques: '<RISQUES>',
+      ralentissements: '<RALENTISSEMENTS>',
+      aide: '<AIDE>',
+      heureux: '<HEUREUX>'
+    };
+
+    function valueOrDefault(fieldName) {
+      const value = fields[fieldName].value.trim();
+      return value || defaults[fieldName];
+    }
+
+    function generatePrompt() {
+      return `Même structure que le speedboat mais avec un thème adapté à ${valueOrDefault('theme')}. Voici comment adapter les différents éléments : 
+- Style global : ${valueOrDefault('style')}
+- Carte globale : ${valueOrDefault('decor')}
+- Objectif -> ${valueOrDefault('objectif')} 
+- Equipe -> ${valueOrDefault('equipe')}
+- Risques -> ${valueOrDefault('risques')}
+- Ralentissements -> ${valueOrDefault('ralentissements')} 
+- Ce qui nous aide -> ${valueOrDefault('aide')}
+- Ce qui nous rend heureux -> ${valueOrDefault('heureux')}`;
+    }
+
+    function updatePrompt() {
+      promptOutput.value = generatePrompt();
+    }
+
+    function showCopyStatus(message = 'Prompt copié !') {
+      copyStatus.textContent = message;
+      copyStatus.classList.add('visible');
+      window.clearTimeout(showCopyStatus.timeoutId);
+      showCopyStatus.timeoutId = window.setTimeout(() => {
+        copyStatus.classList.remove('visible');
+      }, 1800);
+    }
+
+    async function copyPrompt() {
+      const text = promptOutput.value;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        showCopyStatus('Prompt copié !');
+      } catch (error) {
+        promptOutput.focus();
+        promptOutput.select();
+        document.execCommand('copy');
+        showCopyStatus('Prompt copié !');
+      }
+    }
+
+    function resetFields() {
+      Object.values(fields).forEach((field) => {
+        field.value = '';
+      });
+      updatePrompt();
+      fields.theme.focus();
+    }
+
+    Object.values(fields).forEach((field) => {
+      field.addEventListener('input', updatePrompt);
+    });
+
+    copyButton.addEventListener('click', copyPrompt);
+    resetButton.addEventListener('click', resetFields);
+
+    updatePrompt();
+  </script>
+</body>
+</html>
