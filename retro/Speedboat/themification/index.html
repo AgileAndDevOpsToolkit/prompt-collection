@@ -103,6 +103,24 @@
       white-space: nowrap;
     }
 
+    .param-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .param-icon {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      opacity: 0.88;
+      flex: 0 0 auto;
+    }
+
+    .param-label-text {
+      display: inline-block;
+    }
+
     input,
     textarea {
       width: 100%;
@@ -227,6 +245,11 @@
         padding: 12px 0 6px;
       }
 
+      .param-icon {
+        width: 40px;
+        height: 40px;
+      }
+
       .params-table td {
         padding: 0 0 12px;
       }
@@ -260,27 +283,57 @@
               <td><input id="decor" type="text" placeholder="Ex. un village hanté sous la pleine lune" autocomplete="off" /></td>
             </tr>
             <tr>
-              <th scope="row"><label for="objectif">OBJECTIF</label></th>
+              <th scope="row">
+                <label class="param-label" for="objectif">
+                  <img class="param-icon" src="assets/Objectif.png" alt="" aria-hidden="true" />
+                  <span class="param-label-text">OBJECTIF</span>
+                </label>
+              </th>
               <td><input id="objectif" type="text" placeholder="Ex. un château éclairé au loin" autocomplete="off" /></td>
             </tr>
             <tr>
-              <th scope="row"><label for="equipe">EQUIPE</label></th>
+              <th scope="row">
+                <label class="param-label" for="equipe">
+                  <img class="param-icon" src="assets/Equipe.png" alt="" aria-hidden="true" />
+                  <span class="param-label-text">EQUIPE</span>
+                </label>
+              </th>
               <td><input id="equipe" type="text" placeholder="Ex. une équipe déguisée en monstres sympathiques" autocomplete="off" /></td>
             </tr>
             <tr>
-              <th scope="row"><label for="risques">RISQUES</label></th>
+              <th scope="row">
+                <label class="param-label" for="risques">
+                  <img class="param-icon" src="assets/risques.png" alt="" aria-hidden="true" />
+                  <span class="param-label-text">RISQUES</span>
+                </label>
+              </th>
               <td><input id="risques" type="text" placeholder="Ex. des fantômes ou des chauves-souris" autocomplete="off" /></td>
             </tr>
             <tr>
-              <th scope="row"><label for="ralentissements">RALENTISSEMENTS</label></th>
+              <th scope="row">
+                <label class="param-label" for="ralentissements">
+                  <img class="param-icon" src="assets/ralentissement.png" alt="" aria-hidden="true" />
+                  <span class="param-label-text">RALENTISSEMENTS</span>
+                </label>
+              </th>
               <td><input id="ralentissements" type="text" placeholder="Ex. des toiles d’araignée sur le chemin" autocomplete="off" /></td>
             </tr>
             <tr>
-              <th scope="row"><label for="aide">AIDE</label></th>
+              <th scope="row">
+                <label class="param-label" for="aide">
+                  <img class="param-icon" src="assets/aide.png" alt="" aria-hidden="true" />
+                  <span class="param-label-text">AIDE</span>
+                </label>
+              </th>
               <td><input id="aide" type="text" placeholder="Ex. des lanternes, potions ou bonbons magiques" autocomplete="off" /></td>
             </tr>
             <tr>
-              <th scope="row"><label for="heureux">HEUREUX</label></th>
+              <th scope="row">
+                <label class="param-label" for="heureux">
+                  <img class="param-icon" src="assets/heureux.png" alt="" aria-hidden="true" />
+                  <span class="param-label-text">HEUREUX</span>
+                </label>
+              </th>
               <td><input id="heureux" type="text" placeholder="Ex. un panier rempli de bonbons déjà récoltés" autocomplete="off" /></td>
             </tr>
           </tbody>
