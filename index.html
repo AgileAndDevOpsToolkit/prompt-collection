@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boîte à outils de Prompts LLM</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background-color: #f9f9f9;
+        }
+        header {
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            color: #0969da;
+            margin-bottom: 0.5rem;
+        }
+        .description {
+            font-size: 1.1rem;
+            color: #57606a;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        @media (min-width: 600px) {
+            .card-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .card:hover {
+            border-color: #0969da;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #0969da;
+            font-size: 1.3rem;
+        }
+        .card p {
+            margin-bottom: 0;
+            color: #57606a;
+        }
+        footer {
+            margin-top: 4rem;
+            border-top: 1px solid #eaeaea;
+            padding-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #57606a;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Boîte à outils de Prompts LLM</h1>
+        <p class="description">Un espace de stockage de prompts pour les grands modèles de langage (LLM) ainsi que des outils interactifs d'aide à la génération de prompts.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Outils interactifs & Générateurs</h2>
+            <div class="card-container">
+                <a href="Speedboat/themification/index.html" class="card">
+                    <h2>Speedboat - Thémification</h2>
+                    <p>Accéder à l'application interactive de thémification Speedboat pour structurer et concevoir vos ateliers ou prompts complexes.</p>
+                </a>
+                <!-- D'autres pages pourront être ajoutées ici par la suite -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hébergé sur GitHub Pages &bull; AgileAndDevOpsToolkit</p>
+    </footer>
+
+</body>
+</html>
