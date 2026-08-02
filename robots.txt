@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agileanddevopstoolkit.github.io/prompt-collection/sitemap.xml
