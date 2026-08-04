@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://agileanddevopstoolkit.github.io/prompt-collection/</loc>
+    <loc>https://prompts.agiletoolkit.fr/</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
   </url>
   <url>
-    <loc>https://agileanddevopstoolkit.github.io/prompt-collection/retro/Speedboat/themification/index.html</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://prompts.agiletoolkit.fr/retro/Speedboat/themification/</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
   </url>
 </urlset>
