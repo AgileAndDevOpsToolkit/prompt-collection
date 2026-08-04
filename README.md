@@ -20,10 +20,10 @@ Le dépôt contient actuellement des prompts et outils autour des rétrospective
 - `retro/retro-meta-prompt.txt`
   Prompt de base pour générer un template de rétrospective de type Speedboat.
 
-- `retro/Speedboat/speedboat-variation.txt`
+- `retro/speedboat/speedboat-variation.txt`
   Variante de prompt pour adapter la structure Speedboat à un thème donné.
 
-- `retro/Speedboat/speedboat-variation-composition.txt`
+- `retro/speedboat/speedboat-variation-composition.txt`
   Variante enrichie pour générer une composition thémifiée en s'appuyant sur la structure Speedboat.
 
 - `retro/TroisPetitsCochons/troisPetitsCochonsDeLEspaces.txt`
@@ -34,7 +34,7 @@ Le dépôt contient actuellement des prompts et outils autour des rétrospective
 - `index.html`
   Page d'accueil du site publié via GitHub Pages.
 
-- `retro/Speedboat/themification/index.html`
+- `retro/speedboat/themification/index.html`
   Générateur interactif permettant de remplir les paramètres d'une variante thémifiée de Speedboat.
 
 ## Structure du dépôt
@@ -45,7 +45,7 @@ Le dépôt contient actuellement des prompts et outils autour des rétrospective
 ├── README.md
 └── retro/
     ├── retro-meta-prompt.txt
-    ├── Speedboat/
+    ├── speedboat/
     │   ├── speedboat-variation.txt
     │   ├── speedboat-variation-composition.txt
     │   └── themification/
@@ -68,7 +68,7 @@ La page d'accueil du dépôt sert de porte d'entrée vers les aides disponibles.
 Exemples actuels :
 
 - page d'accueil : `index.html`
-- générateur Speedboat thémifié : `retro/Speedboat/themification/index.html`
+- générateur Speedboat thémifié : `retro/speedboat/themification/index.html`
 
 ## GitHub Pages
 
@@ -78,7 +78,7 @@ Une fois GitHub Pages activé sur la branche principale, la page racine `index.h
 
 URL actuellement servie pour le générateur Speedboat thémifié :
 
-https://agileanddevopstoolkit.github.io/prompt-collection/retro/Speedboat/themification/index.html
+https://prompts.agiletoolkit.fr/retro/speedboat/themification/
 
 ## Lancer en local
 
