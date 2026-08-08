@@ -103,6 +103,19 @@
       text-align: center;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
     h1 {
       margin: 0;
       font-size: clamp(2rem, 4vw, 3.2rem);
@@ -321,6 +334,7 @@
 <body>
   <main class="page">
     <header>
+      <a class="back-link" href="../../../index.html">Retour à l'accueil</a>
       <h1>Thémification Speed Boat</h1>
       <p class="subtitle">
         Renseigne les paramètres du template : le prompt se met à jour automatiquement et reste éditable avant copie.
